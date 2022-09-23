@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		349CB13428DDECFD002C2DCB /* defewgApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CB13328DDECFD002C2DCB /* defewgApp.swift */; };
-		349CB13628DDECFD002C2DCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CB13528DDECFD002C2DCB /* ContentView.swift */; };
+		349CB13628DDECFD002C2DCB /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CB13528DDECFD002C2DCB /* Main.swift */; };
 		349CB13828DDECFE002C2DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349CB13728DDECFE002C2DCB /* Assets.xcassets */; };
 		349CB13B28DDECFE002C2DCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349CB13A28DDECFE002C2DCB /* Preview Assets.xcassets */; };
+		349CB14428DDFC40002C2DCB /* RewardsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CB14328DDFC40002C2DCB /* RewardsPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		349CB13028DDECFD002C2DCB /* defewg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = defewg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349CB13328DDECFD002C2DCB /* defewgApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defewgApp.swift; sourceTree = "<group>"; };
-		349CB13528DDECFD002C2DCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		349CB13528DDECFD002C2DCB /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		349CB13728DDECFE002C2DCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		349CB13A28DDECFE002C2DCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		349CB14328DDFC40002C2DCB /* RewardsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				349CB13328DDECFD002C2DCB /* defewgApp.swift */,
-				349CB13528DDECFD002C2DCB /* ContentView.swift */,
+				349CB13528DDECFD002C2DCB /* Main.swift */,
+				349CB14328DDFC40002C2DCB /* RewardsPage.swift */,
 				349CB13728DDECFE002C2DCB /* Assets.xcassets */,
 				349CB13928DDECFE002C2DCB /* Preview Content */,
 			);
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349CB13628DDECFD002C2DCB /* ContentView.swift in Sources */,
+				349CB14428DDFC40002C2DCB /* RewardsPage.swift in Sources */,
+				349CB13628DDECFD002C2DCB /* Main.swift in Sources */,
 				349CB13428DDECFD002C2DCB /* defewgApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
