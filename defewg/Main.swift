@@ -37,8 +37,39 @@ struct Main: View {
 
 struct HomePage: View {
     var body: some View {
-            Text("HomePage")
         
+        VStack {
+            ZStack {
+                Rectangle()
+                    .fill(Color.gray.opacity(0.2))
+                    .frame(height: 1.3)
+                    .offset(y: 22)
+                HStack {
+                    HStack {
+                        Image("LogoForNavigationBar")
+                            .resizable()
+                            .scaledToFit()
+                        Text("Rewards".uppercased())
+                            .font(.system(size: 16, weight: .semibold, design: .default))
+                            .foregroundColor(Color("Green"))
+                            .offset(x: -10, y: -3)
+                    }
+                    .frame(width: 270, height: 100)
+                    Spacer()
+                    Button(action: {
+                        // some code
+                    }) {
+                        Image(systemName: "mail")
+                            .font(.headline  )
+                            .foregroundColor(Color("Gray"))
+                    }
+                }
+                .padding()
+            }
+            Spacer()
+        }
+        
+//        .background(Color.yellow)
     }
 }
 
@@ -59,6 +90,7 @@ struct GamesPage: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Main()
+//        Main()
+        HomePage()
     }
 }
