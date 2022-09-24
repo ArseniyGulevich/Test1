@@ -12,6 +12,7 @@ import SwiftUI
 struct Main: View {
     
     @State var whatPage = 1
+    @State var popupOpen = false
     
     var body: some View {
         ZStack {
@@ -26,80 +27,179 @@ struct Main: View {
                 if whatPage == 4 { RewardsPage() }
             }
             
+            if popupOpen { Color.black.opacity(0.53).ignoresSafeArea() }
+            
             VStack {
                 Spacer()
+                
                 ZStack {
-                    HStack {
-                        Button(action: {
-                            whatPage = 1
-                        }) {
-                            Image(whatPage == 1 ? "home-on" : "home-off")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                        }
-                        Spacer()
-                        Button(action: {
-                            whatPage = 2
-                        }) {
-                            Image(whatPage == 2 ? "star-on" : "star-off")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                        }
-                        Spacer()
-                        Spacer()
-                        Spacer()
-                        Button(action: {
-                            whatPage = 3
-                        }) {
-                            Image(whatPage == 3 ? "gamepad-on" : "gamepad-off")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                        }
-                        Spacer()
-                        Button(action: {
-                            whatPage = 4
-                        }) {
-                            Image(whatPage == 4 ? "achievement-on" : "achievement-off")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 20, height: 20)
-                        }
-                    }
-                    .frame(height: 50)
-    //                    .background(.red)
-                    
-                    Button(action: {
-                        // some code
-                    }) {
-                        Circle()
-                            .fill(LinearGradient(colors: [Color("LightGreen"), Color("Green")], startPoint: .top, endPoint: .bottom))
-                            .frame(width: 73, height: 73)
-                            .overlay(
-                                Image("plus-icon")
+                    if !popupOpen {
+                        HStack {
+                            Button(action: {
+                                whatPage = 1
+                            }) {
+                                Image(whatPage == 1 ? "home-on" : "home-off")
                                     .resizable()
-                                    .frame(width: 26, height: 26)
-                            )
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                            }
+                            Spacer()
+                            Button(action: {
+                                whatPage = 2
+                            }) {
+                                Image(whatPage == 2 ? "star-on" : "star-off")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                            }
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                            Button(action: {
+                                whatPage = 3
+                            }) {
+                                Image(whatPage == 3 ? "gamepad-on" : "gamepad-off")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                            }
+                            Spacer()
+                            Button(action: {
+                                whatPage = 4
+                            }) {
+                                Image(whatPage == 4 ? "achievement-on" : "achievement-off")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                            }
+                        }
+                        .frame(height: 50)
                     }
-                    .offset(y: -24)
+                
+                    Circle()
+                        .fill(LinearGradient(colors: [Color("LightGreen"), Color("Green")], startPoint: .top, endPoint: .bottom))
+                        .frame(width: 73, height: 73)
+                        .overlay(
+                            Image(popupOpen ? "x-icon" : "plus-icon")
+                                .resizable()
+                                .frame(width: 26, height: 26)
+                        )
+                        .offset(y: popupOpen ? -410 : -24)
+                        .onTapGesture {
+                            popupOpen.toggle()
+                        }
+                        .animation(.spring())
                 }
                 .frame(height: 50)
                 .padding(.horizontal, 35)
                 .background(
-                    Image("bar-background")
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color.white.opacity(0.95))
-                        .frame(width: UIScreen.main.bounds.width, height: 100)
-                        .offset(y: 20)
-                        .shadow(color: .black.opacity(0.15), radius: 20, x: 0, y: -4)
+                    ZStack {
+                        Image("bar-background-big")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFill()
+                            .offset(y: popupOpen ? -190 : 195)
+                            .animation(.spring())
+                            .foregroundColor(Color.white.opacity(popupOpen ? 1 : 0.95))
+                            .frame(width: UIScreen.main.bounds.width, height: 100)
+                            .offset(y: 20)
+                            .shadow(color: .black.opacity(0.15), radius: 20, x: 0, y: -4)
+                        
+                        VStack {
+                            if popupOpen { Cards() }
+                        }
+                        .offset(y: popupOpen ? -175 : 175)
+                        .animation(.spring())
+                        .frame(height: 700)
+                    }
                 )
+                
             }
             
         }
+    }
+}
+
+struct Cards: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            
+            Button(action: {
+                //
+            }) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(LinearGradient(colors: [Color("Green"), Color("LightGreen"), Color("Green"),], startPoint: .leading, endPoint: .trailing))
+                        .frame(height: 100)
+                     HStack {
+                        Image("AddUnderbergExperience-icon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 36, height: 36)
+                            .padding(32)
+                            .padding(.horizontal, 10)
+                         Text("Add Underberg\nExperience")
+                             .font(.system(size: 20, weight: .bold))
+                             .lineLimit(2)
+                             .foregroundColor(.white)
+                         Spacer()
+                    }
+                }
+                .padding(.horizontal, 23)
+                .padding(.vertical, 10)
+            }
+            
+            Button(action: {
+                //
+            }) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color("LightGray"))
+                        .frame(height: 100)
+                     HStack {
+                        Image("FillupYourUnderbergTank-icon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 73, height: 73)
+                            .padding(13)
+                            .padding(.horizontal, 10)
+                         Text("Fill up Your\nUnderberg Tank")
+                             .font(.system(size: 20, weight: .bold))
+                             .lineLimit(2)
+                             .foregroundColor(.black)
+                         Spacer()
+                    }
+                }
+                .padding(.horizontal, 23)
+                .padding(.vertical, 10)
+            }
+            
+            Button(action: {
+                //
+            }) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color("LightGray"))
+                        .frame(height: 100)
+                     HStack {
+                        Image("CreateYourGiftPack-icon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 73, height: 73)
+                            .padding(13)
+                            .padding(.horizontal, 10)
+                         Text("Create Your Gift\nPack")
+                             .font(.system(size: 20, weight: .bold))
+                             .lineLimit(2)
+                             .foregroundColor(.black)
+                         Spacer()
+                    }
+                }
+                .padding(.horizontal, 23)
+                .padding(.vertical, 10)
+            }
+        }
+        .background(.white)
     }
 }
 
@@ -151,6 +251,6 @@ struct TitleBar: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Main()
-//        HomePage()
+//        Cards()
     }
 }
