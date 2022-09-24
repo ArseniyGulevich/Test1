@@ -42,7 +42,7 @@ struct RewardsPage: View {
     var body: some View {
         
         ScrollView {
-            TitleBar(pageName: "Games")
+            TitleBar(pageName: "reward")
             LazyVGrid(columns: columns, spacing: 40) {
                 ForEach(items) { item in
                     VStack(alignment: .leading, spacing: 14) {
