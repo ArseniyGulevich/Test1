@@ -12,7 +12,7 @@ import SwiftUI
 struct Main: View {
     var body: some View {
         TabView {
-            HomePage()
+            LivePage()
                 .tabItem { Image(systemName: "house") }
 
             ChallengePage()
@@ -35,85 +35,36 @@ struct Main: View {
     }
 }
 
-struct HomePage: View {
+struct TitleBar: View {
+    @State var pageName: String
+    
     var body: some View {
-        
-        VStack {
-            ZStack {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.2))
-                    .frame(height: 1.3)
-                    .offset(y: 22)
-                HStack {
-                    HStack {
-                        Image("LogoForNavigationBar")
-                            .resizable()
-                            .scaledToFit()
-                        Text("Rewards".uppercased())
-                            .font(.system(size: 16, weight: .semibold, design: .default))
-                            .foregroundColor(Color("Green"))
-                            .offset(x: -10, y: -3)
-                    }
-                    .frame(width: 270, height: 100)
-                    Spacer()
-                    Button(action: {
-                        // some code
-                    }) {
-                        Image(systemName: "mail")
-                            .font(.headline  )
-                            .foregroundColor(Color("Gray"))
-                    }
-                }
-                .padding()
-            }
+        HStack(spacing: 0) {
+            Image("LogoForNavigationBar")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 182, height: 90, alignment: .trailing)
+                
+            Text(pageName.uppercased())
+                .font(.system(size: 16, weight: .semibold, design: .default))
+                .foregroundColor(Color("Green"))
+                .offset(y: -3)
             Spacer()
         }
-        
-        
-//        .background(Color.yellow)
+        .background(
+            Rectangle()
+                .fill(Color.gray.opacity(0.2))
+                .frame(height: 1.3)
+                .offset(y: 22)
+        )
     }
 }
 
-struct GamesPage: View {
-    var body: some View {
-        VStack {
-            HStack(spacing: 0) {
-                Image("LogoForNavigationBar")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 182, height: 90, alignment: .trailing)
-                    
-                Text("Games".uppercased())
-                    .font(.system(size: 16, weight: .semibold, design: .default))
-                    .foregroundColor(Color("Green"))
-                    .offset(y: -3)
-                Spacer()
-            }
-            .background(
-                Rectangle()
-                    .fill(Color.gray.opacity(0.2))
-                    .frame(height: 1.3)
-                    .offset(y: 22)
-            )
-            Spacer()
-        }
-        
-        
-        
-        
-        
-    }
-}
 
-struct ChallengePage: View {
-    var body: some View {
-            Text("ChallengePage")
-    }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-//        Main()
-        GamesPage()
+        Main()
+//        HomePage()
     }
 }
