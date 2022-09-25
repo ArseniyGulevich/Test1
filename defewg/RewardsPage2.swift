@@ -12,16 +12,9 @@ struct ItemModel: Identifiable {
     var name: String
     var price: Int
     var photo: String
-    
-//    init(name: String, price: Int, photo: String) {
-//        self.name = name
-//        self.price = price
-//        self.photo = photo
-//    }
-
 }
 
-struct RewardsPage: View {
+struct RewardsPage2: View {
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 20, alignment: .topTrailing),
@@ -40,9 +33,8 @@ struct RewardsPage: View {
     ]
     
     var body: some View {
-        
         ScrollView {
-            TitleBar(pageName: "reward")
+            TitleBar(pageName: "rewards")
             LazyVGrid(columns: columns, spacing: 40) {
                 ForEach(items) { item in
                     VStack(alignment: .leading, spacing: 14) {
@@ -78,8 +70,8 @@ struct RewardsPage: View {
     }
 }
 
-struct RewardsPage_Previews: PreviewProvider {
+struct RewardsPage2_Previews: PreviewProvider {
     static var previews: some View {
-        RewardsPage()
+        RewardsPage2()
     }
 }

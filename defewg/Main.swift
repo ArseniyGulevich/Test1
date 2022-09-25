@@ -24,7 +24,7 @@ struct Main: View {
                 if whatPage == 1 { LivePage() }
                 if whatPage == 2 { ChallengePage() }
                 if whatPage == 3 { GamesPage() }
-                if whatPage == 4 { RewardsPage() }
+                if whatPage == 4 { RewardsPage1() }
             }
             
             if popupOpen { Color.black.opacity(0.53).ignoresSafeArea() }

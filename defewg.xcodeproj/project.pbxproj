@@ -11,7 +11,8 @@
 		349CB13628DDECFD002C2DCB /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CB13528DDECFD002C2DCB /* Main.swift */; };
 		349CB13828DDECFE002C2DCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349CB13728DDECFE002C2DCB /* Assets.xcassets */; };
 		349CB13B28DDECFE002C2DCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349CB13A28DDECFE002C2DCB /* Preview Assets.xcassets */; };
-		349CB14428DDFC40002C2DCB /* RewardsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CB14328DDFC40002C2DCB /* RewardsPage.swift */; };
+		349CB14428DDFC40002C2DCB /* RewardsPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CB14328DDFC40002C2DCB /* RewardsPage2.swift */; };
+		34A1A9EB28DFAD72008B6021 /* RewardsPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A1A9EA28DFAD72008B6021 /* RewardsPage1.swift */; };
 		34EA1E4B28DEF3E700B3A4C1 /* GamesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA1E4A28DEF3E700B3A4C1 /* GamesPage.swift */; };
 		34EA1E4D28DEF8F400B3A4C1 /* LivePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA1E4C28DEF8F400B3A4C1 /* LivePage.swift */; };
 		34EA1E4F28DEF93E00B3A4C1 /* ChallengePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA1E4E28DEF93E00B3A4C1 /* ChallengePage.swift */; };
@@ -23,7 +24,8 @@
 		349CB13528DDECFD002C2DCB /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		349CB13728DDECFE002C2DCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		349CB13A28DDECFE002C2DCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		349CB14328DDFC40002C2DCB /* RewardsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsPage.swift; sourceTree = "<group>"; };
+		349CB14328DDFC40002C2DCB /* RewardsPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsPage2.swift; sourceTree = "<group>"; };
+		34A1A9EA28DFAD72008B6021 /* RewardsPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsPage1.swift; sourceTree = "<group>"; };
 		34EA1E4A28DEF3E700B3A4C1 /* GamesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesPage.swift; sourceTree = "<group>"; };
 		34EA1E4C28DEF8F400B3A4C1 /* LivePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePage.swift; sourceTree = "<group>"; };
 		34EA1E4E28DEF93E00B3A4C1 /* ChallengePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePage.swift; sourceTree = "<group>"; };
@@ -64,7 +66,8 @@
 				34EA1E4C28DEF8F400B3A4C1 /* LivePage.swift */,
 				34EA1E4E28DEF93E00B3A4C1 /* ChallengePage.swift */,
 				34EA1E4A28DEF3E700B3A4C1 /* GamesPage.swift */,
-				349CB14328DDFC40002C2DCB /* RewardsPage.swift */,
+				34A1A9EA28DFAD72008B6021 /* RewardsPage1.swift */,
+				349CB14328DDFC40002C2DCB /* RewardsPage2.swift */,
 				349CB13728DDECFE002C2DCB /* Assets.xcassets */,
 				349CB13928DDECFE002C2DCB /* Preview Content */,
 			);
@@ -151,10 +154,11 @@
 			files = (
 				34EA1E4F28DEF93E00B3A4C1 /* ChallengePage.swift in Sources */,
 				34EA1E4B28DEF3E700B3A4C1 /* GamesPage.swift in Sources */,
-				349CB14428DDFC40002C2DCB /* RewardsPage.swift in Sources */,
+				349CB14428DDFC40002C2DCB /* RewardsPage2.swift in Sources */,
 				349CB13628DDECFD002C2DCB /* Main.swift in Sources */,
 				34EA1E4D28DEF8F400B3A4C1 /* LivePage.swift in Sources */,
 				349CB13428DDECFD002C2DCB /* defewgApp.swift in Sources */,
+				34A1A9EB28DFAD72008B6021 /* RewardsPage1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
